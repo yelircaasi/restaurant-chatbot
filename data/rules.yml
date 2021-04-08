@@ -1,0 +1,57 @@
+version: "2.0"
+rules:
+  - rule: greet
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: bot challenge
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+
+  - rule: handle out-of-scope requests
+    steps:
+      - intent: nlu_fallback
+      - action: action_clarify
+
+  - rule: give recommendations
+    steps:
+      - intent: get_recommendation
+      - action: action_give_recommendation
+  
+  - rule: get ratings
+    steps:
+      - intent: get_ratings
+      - action: action_retrieve_ratings
+  
+  - rule: get restaurant
+    steps: 
+      - intent: get_restaurant
+      - action: action_retrieve_restaurant
+
+  - rule: get menu
+    steps:
+      - intent: get_menu
+      - action: action_retrieve_menu
+  
+  - rule: get menu item
+    steps:
+      - intent: get_item
+      - action: action_retrieve_item
+  
+  - rule: get price
+    steps:
+      - intent: get_price
+      - action: action_retrieve_price
+  
+  - rule: get calories
+    steps:
+      - intent: get_calories
+      - action: action_retrieve_calories
+  

@@ -1,0 +1,94 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- get_restaurant
+- goodbye
+- get_item
+- thank
+- bot_challenge
+- choose_restaurant
+- get_recommendation
+- get_ratings
+- get_menu
+- get_price
+- get_menu_item
+- get_calories
+- make_choice
+- nlu_fallback
+entities:
+- restaurant_name_raw
+- restaurant_attribute
+- restaurant_name
+- item_name_raw
+- item_attribute
+slots:
+  item_attribute:
+    type: text
+    influence_conversation: true
+  item_candidates_list:
+    type: any
+    influence_conversation: false
+  item_id:
+    type: float
+    influence_conversation: true
+    max_value: 1.0
+    min_value: 0.0
+  item_name:
+    type: text
+    influence_conversation: true
+  item_name_raw:
+    type: text
+    influence_conversation: true
+  out_of_scope_counter:
+    type: float
+    influence_conversation: true
+    max_value: 1.0
+    min_value: 0.0
+  restaurant_attribute:
+    type: text
+    influence_conversation: true
+  restaurant_candidates_list:
+    type: any
+    influence_conversation: false
+  restaurant_id:
+    type: float
+    influence_conversation: true
+    max_value: 1.0
+    min_value: 0.0
+  restaurant_name:
+    type: text
+    influence_conversation: true
+  restaurant_name_raw:
+    type: text
+    influence_conversation: true
+responses:
+  utter_ask_restaurant_type:
+  - text: Was für ein Restaurant suchst du?
+  utter_greet:
+  - text: Hallo!
+  - text: Hallo! Wie kann ich dir helfen?
+  utter_goodbye:
+  - text: Tschüss!
+  - text: Tschau!
+  - text: Bis später!
+  utter_yourewelcome:
+  - text: Bitte!
+  - text: Bitte schön!
+  utter_iamabot:
+  - text: Ich bin ein Bot.
+actions:
+- action_clarify
+- action_give_recommendation
+- action_retrieve_calories
+- action_retrieve_price
+- action_retrieve_item
+- action_retrieve_menu
+- action_retrieve_ratings
+- action_retrieve_restaurant
+- action_select_item
+- utter_goodbye
+- utter_greet
+- utter_iamabot
+- utter_yourewelcome

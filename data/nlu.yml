@@ -1,0 +1,222 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hi
+    - hallo
+    - guten morgen
+    - guten tag
+    - guten abend
+    - servus
+    - Hallo!
+    - Guten Tag!
+    - Hi
+    - hey
+    - Yo
+    - Grüß Gott
+    - Guten Morgen
+    - Morgen
+    - Guten Abend
+    - Servus
+    - Hi, was geht?
+    - Wie geht's?
+    - Halo
+    - Grüße
+    - was geht?
+    - Moin
+    - Hallo
+    - Servus!
+    - Hey
+    - Hllo
+- intent: goodbye
+  examples: |
+    - tschau
+    - bis später
+    - auf wiedersehen
+    - tschüss
+    - Tschau!
+    - Tschüss
+    - tschüss!
+    - Ciao
+    - Auf Wiedersehen
+    - Bis morgen
+    - Bye
+    - Lebewohl
+    - Na, tschüss!
+    - Tchuss
+    - Bis später dann
+    - Tschau
+- intent: thank
+  examples: |
+    - Danke
+    - Danke schön
+    - Danke schön!
+    - Danke!
+    - danke
+    - Vielen Dank
+    - Toll, vielen Dank
+    - cool, danke
+    - Cool, Danke!
+    - Das war sehr hilfreich, vielen Dank
+    - Sehr gut, vielen Dank!
+    - Danke dir.
+    - Gut, Danke.
+    - danke für alles
+    - Ok, Danke schön.
+- intent: bot_challenge
+  examples: |
+    - Bist du ein Mensch?
+    - Bist du ein Chatbot?
+    - Was kannst du alles?
+    - Bist du intelligent?
+    - Wie viel weißt du?
+    - Bist du mein Freund?
+    - Wo kommst du her?
+    - Was willst du?
+    - Was ist mit dir los?
+    - was bist du
+    - wer bist du
+    - Du bist nur ein Chatbot
+- intent: get_recommendation
+  examples: |
+    - Kannst du mir was gutes empfehlen?
+    - Kannst du mir ein [italienisches]{"entity": "restaurant_attribute", "value": "italian"} Resaurant empfehlen?
+    - Kannst du mir irgenwas vorschlagen?
+    - Was ist das beste hier in de Nähe?
+    - Gib mir eine Empfehlung
+    - empfehle mir irgendwas
+    - schlage mir was [indisches]{"entity": "restaurant_attribute", "value": "indian"} vor
+- intent: get_restaurant
+  examples: |
+    - Ich möchte ein Restaurant finden.
+    - Ich brauche ein gutes Restaurant
+    - Ich brauche ein [italienisches]{"entity": "restaurant_attribute", "value": "italian"} Restaurant
+    - Ich suche ein gutes Restaurant mit Meeresfrüchte
+    - Ich suche nach einem [Meeresfrüchte]{"entity": "restaurant_attribute", "value": "seafood"} Restaurant
+    - finde mir einen [Italiener]{"entity": "restaurant_attribute", "value": "italian"} hier in der Nähe
+    - Wo ist das nächste Restaurant mit mindestens 90% positivem Feedback?
+    - Wir wollen ein lokales Restaurant.
+    - Wir brauchen einfach irgendwas zum essen
+    - Ich will ein [Fast Food]{"entity": "restaurant_attribute", "value": "fast food"} Restaurant.
+    - Wo ist hier ein billiger [Imbiss]{"entity": "restaurant_attribute", "value": "fast food"}?
+    - ich will [fish and chips]{"entity": "restaurant_attribute", "value": "fish and chips"} essen
+    - Ich brauche ein Restaurant
+    - Ich suche nach einem Restaurant hier in der Nähe
+    - suche bitte nach restaurants
+    - ich will heute Abend [thailändisch]{"entity": "restaurant_attribute", "value": "thai"} essen
+    - Ich brauch ein Restaurant bitte
+    - Ich suche ein Restaurant
+    - Ich suche ein [italienisches]{"entity": "restaurant_attribute", "value": "italian"} Restaurant
+    - ich brauche ein [italienisches]{"entity": "restaurant_attribute", "value": "italian"} Restaurant
+    - Ich suche ein [indisches]{"entity": "restaurant_attribute", "value": "indian"} Restaurant
+    - Ich suche ein [italienisches]{"entity": "restaurant_attribute", "value": "italian"} Restaurant
+    - Ich brauche ein [indisches]{"entity": "restaurant_attribute", "value": "indian"} Restaurant
+- intent: get_item
+  examples: |
+    - Zeige mir die [Pizzas](item_name_raw)
+    - Ich will die [Currys](item_name_raw) sehen
+    - Gibt es irgendws mit [Fisch](item_name_raw)?
+    - Haben sie eine [Suppe](item_name_raw)?
+    - Was gibt's zum Trinken
+    - Was hat das Restaurant an Getränken?
+    - zeig getränke
+    - Haben sie vielleicht einen [Curry](item_name_raw)?
+#    - Was haben sie mit Hähnchenfleisch]?
+#- intent: make_choice
+#  examples: |
+#    - Ja, [Ciao Bella](restaurant_name) hört sich gut an
+#    - [Ristorant Torino]{"entity": "restaurant_name", "value": "Ristorante Torino"}
+#    - [Ganesha House](restaurant_name_raw) dann
+#    - [Döner](restaurant_name_raw)
+#    - [Molly's](restaurant_name_raw)
+#    - [Truck Stop Diner](restaurant_name_raw)
+#    - [1](choice_number)
+#    - [2](choice_number)
+#    - [3](choice_number)
+#    - [4](choice_number)
+- intent: get_ratings
+  examples: |
+    - Wie ist die Bewertung von [Ganesha](restaurant_name_raw)?
+    - Welche Bewertung hat [Ciao Bella](restaurant_name_raw)?
+    - Welche Bewertungen hat [La Toscana](restaurant_name_raw)?
+    - Zeige mir die Bewertung von [Molly](restaurant_name_raw).
+    - Bewertung von [The Anchor](restaurant_name_raw)
+    - Welche Bewertungen haben die Restaurants?
+    - Welche Bewertung?
+    - wie gut ist das Restaurant?
+    - Zeige mir die Bewertung von [Steve's Diner](restaurant_name_raw).
+    - Bewertung von [Ganesha House](restaurant_name_raw)
+    - Welche Bewertungen hat [La Vita è Bella](restaurant_name_raw)?
+- intent: get_menu
+  examples: |
+    - Kann ich das Menu von [Ristorante Torino](restaurant_name_raw) sehen?
+    - Zeige mir das Menu von [Molly](restaurant_name_raw).
+    - Kann man das Menü von [La Dolce Vita](restaurant_name_raw) sehen?
+    - Ich möchte das Menu sehen.
+    - Was steht alles auf dem Menu?
+    - Gibt es eine Speisekarte?
+    - Zeige mir das Menu von [Ganesha House](restaurant_name_raw).
+    - Kann man das Menü von [Ciao Bella](restaurant_name_raw) sehen?
+    - Zeige mir bitte die Speisekarte von [Taj Mahal](restaurant_name_raw)
+    - Menu, bitte
+    - Menu sehen
+    - Ich will Menu
+    - Zeige mir das Menu von [Ristorante Torino](restaurant_name_raw), bitte.
+    - Zeige mir das Menü, bitte
+    - Kann man das Menü von [The Anchor](restaurant_name_raw) sehen?
+- intent: get_price
+  examples: |
+    - Wie viel kostet die [Pizza](item_name_raw) bei Ciao Bella?
+    - Wie viel kostet die [Pizza alla tonna](item_name_raw)
+    - Wie viel kostet der [Wein](item_name_raw) bei denen?
+    - Wie viel kostet ein [Fish](item_name_raw)?
+    - Was ist der Preis einer [Pizza](item_name_raw)?
+    - Wie viel kostet ein [Curry](restaurant_attribute)?
+    - wie viel ist ein [biryani](restaurant_attribute)?
+    - Wie viel kostet die [Suppe](restaurant_attribute)?
+    - preis von einem [curry](restaurant_attribute)
+    - was kostet ein [kebap](restaurant_attribute)
+    - Wie viel kostet die [Pizza](restaurant_attribute)?
+    - wie viel kostet die [Pizza Margherita](restaurant_attribute)?
+    - wieviel kostet die [pizza alla tonna](restaurant_attribute)?
+    - Wie viel kostet ein [Döner](item_name_raw)?
+    - Wie viel kostet eine [Pizza Margherita](item_name_raw)?
+- intent: get_calories
+  examples: |
+    - Wie viele Kalorien hat die [Pizza](restaurant_attribute)?
+    - Wie viele Kalorien hat das?
+    - wie viele kalorien hat der [Wein](restaurant_attribute)?
+    - Wie viele Kalorien hat das alles zusammen?
+    - Wie viele Kalorien hat der [Curry](restaurant_attribute)?
+    - Wie viele Kalorien hat ein Glas [Wein](restaurant_attribute)?
+    - Und wie viele hat der [Fisch](restaurant_attribute)?
+    - wie viele kalorien
+    - kalorien von [pizza](restaurant_attribute)
+- synonym: italian
+  examples: |
+    - italienisches
+    - italienisch
+    - italiensche
+    - italien
+- synonym: indian
+  examples: |
+    - indisches
+    - indisch
+    - Indien
+- synonym: seafood
+  examples: |
+    - meeresfrüchte
+    - fisch
+    - fish
+- synonym: fast food
+  examples: |
+    - Fast Food
+    - fast-food
+    - Imbiss
+    - Burger
+    - schnelles
+- synonym: thai
+  examples: |
+    - thailändisch
+    - thailand
+    - thailändisches

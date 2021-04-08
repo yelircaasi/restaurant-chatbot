@@ -1,0 +1,297 @@
+version: "2.0"
+stories:
+  - story: greet and find restaurant by name, thank and say goodbye
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_restaurant
+    #- slot_was_set:
+    #  - _slot: restaurant_name
+    - action: action_retrieve_restaurant
+    - intent: thank
+    - action: utter_yourewelcome
+    - intent: goodbye
+    - action: utter_goodbye
+#  - story: greet and find restaurant from list, thank and say goodbye
+#    steps:
+#    - intent: greet
+#    - action: utter_greet
+#    - intent: get_restaurant
+#    - action: check_restaurant
+#    - action: action_present_restaurant_options
+#    - intent: make_choice
+#    - slot_was_set:
+#      - _slot: restaurant_name
+#    - action: action_retrieve_restaurant
+#    - intent: thank
+#    - action: utter_yourewelcome
+#    - intent: goodbye
+#    - action: utter_goodbye
+  - story: greet and find restaurant by type, thank and say goodbye
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_restaurant
+    - slot_was_set:
+      - restaurant_attribute
+    - action: action_retrieve_restaurant
+    - intent: thank
+    - action: utter_yourewelcome
+    - intent: goodbye
+    - action: utter_goodbye
+  - story: greet and find restaurant by type, thank and say goodbye
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_restaurant
+    - slot_was_set:
+      - restaurant_attribute
+    - action: action_retrieve_restaurant
+    - intent: thank
+    - action: utter_yourewelcome
+    - intent: goodbye
+    - action: utter_goodbye
+  - story: greet and find restaurants by name and say goodbye
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_restaurant
+    - slot_was_set:
+      - restaurant_name
+    - action: action_retrieve_restaurant
+    - intent: goodbye
+    - action: utter_goodbye
+  - story: greet and find restaurants by type and say goodbye
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_restaurant
+    - action: action_retrieve_restaurant
+    - intent: goodbye
+    - action: utter_goodbye
+  - story: greet and answer bot challenge
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: bot_challenge
+    - action: utter_iamabot
+  - story: bot challenge
+    steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+  - story: hello goodbye
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: goodbye
+    - action: utter_goodbye
+  - story: greet and find restaurants
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_restaurant
+    - action: action_retrieve_restaurant
+    - intent: goodbye
+    - action: utter_goodbye
+  - story: find restaurants
+    steps:
+    - intent: get_restaurant
+    - action: action_retrieve_restaurant
+    - intent: goodbye
+    - action: utter_goodbye
+  - story: greet, find restaurant, answer price question, say goodbye
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_restaurant
+    - action: action_retrieve_restaurant
+    - intent: get_price
+    - action: action_retrieve_price
+    - intent: goodbye
+    - action: utter_goodbye
+  - story: greet, find restaurant, answer price question, thanks, say goodbye
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_restaurant
+    - action: action_retrieve_restaurant
+    - intent: get_price
+    - action: action_retrieve_price
+    - intent: thank
+    - action: utter_yourewelcome
+    - intent: goodbye
+    - action: utter_goodbye
+#  - story: greet, find restaurant and get menu, say goodbye
+#    steps:
+#    - intent: greet
+#    - action: utter_greet
+#    - intent: get_restaurant
+#    - action: action_retrieve_restaurant
+#    - intent: get_menu
+#    - action: action_retrieve_menu
+#    - intent: goodbye
+#    - action: utter_goodbye
+#  - story: greet, get recommendation, get menu, and answer price question, goodbye
+#    steps:
+#    - intent: greet
+#    - action: utter_greet
+#    - intent: get_recommendation
+#    - action: action_give_recommendation
+#    - intent: get_menu
+#    - action: action_retrieve_menu
+#    - intent: goodbye
+#    - action: utter_goodbye
+  - story: greet, find restaurant and answer calories question, goodbye
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_restaurant
+    - action: action_retrieve_restaurant
+    - intent: get_calories
+    - action: action_retrieve_calories
+    - intent: goodbye
+    - action: utter_goodbye
+  - story: greet, find restaurant and answer price and calories question
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_restaurant
+    - action: action_retrieve_restaurant
+    - intent: get_price
+    - action: action_retrieve_price
+    - intent: get_calories
+    - action: action_retrieve_calories
+    - intent: goodbye
+    - action: utter_goodbye
+  - story: greet, find restaurant and answer price and calories questions, repeat for new item
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_restaurant
+    - action: action_retrieve_restaurant
+    - intent: get_price
+    - action: action_retrieve_price
+    - intent: get_calories
+    - action: action_retrieve_calories
+    - intent: get_price
+    - action: action_retrieve_price
+    - intent: get_calories
+    - action: action_retrieve_calories
+  - story: greet, find restaurant and answer price and calories questions, repeat for new restaurant
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_restaurant
+    - action: action_retrieve_restaurant
+    - intent: get_price
+    - action: action_retrieve_price
+    - intent: get_calories
+    - action: action_retrieve_calories
+    - intent: get_restaurant
+    - action: action_retrieve_restaurant
+    - intent: get_price
+    - action: action_retrieve_price
+    - intent: get_calories
+    - action: action_retrieve_calories
+  - story: greet, find restaurant, get price, repeat, goodbye
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_restaurant
+    - action: action_retrieve_restaurant
+    - intent: get_price
+    - action: action_retrieve_price
+    - intent: get_price
+    - action: action_retrieve_price
+  - story: greet, find restaurant, get calories, repeat, goodbye
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_calories
+    - action: action_retrieve_calories
+    - intent: get_calories
+    - action: action_retrieve_calories
+    - intent: goodbye
+    - action: utter_goodbye
+  - story: greet, find restaurant, choose restaurant, get price, repeat, goodbye
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_restaurant
+    - action: action_retrieve_restaurant
+    - intent: get_price
+    - action: action_retrieve_price
+    - intent: get_price
+    - action: action_retrieve_price
+  - story: greet, find restaurant, choose restaurant, get calories, repeat, goodbye
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_calories
+    - action: action_retrieve_calories
+    - intent: get_calories
+    - action: action_retrieve_calories
+    - intent: goodbye
+    - action: utter_goodbye
+  - story: greet, find restaurant and answer price question, repeat twice
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_restaurant
+    - action: action_retrieve_restaurant
+    - intent: get_price
+    - action: action_retrieve_price
+    - intent: get_price
+    - action: action_retrieve_price
+  - story: greet, find restaurant and answer price question, repeat twice
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_restaurant
+    - action: action_retrieve_restaurant
+    - intent: get_price
+    - action: action_retrieve_price
+    - intent: get_price
+    - action: action_retrieve_price
+    - intent: get_price
+    - action: action_retrieve_price
+    - intent: goodbye
+    - action: utter_goodbye
+  - story: greet, find restaurant and answer calories question, repeat twice
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_restaurant
+    - action: action_retrieve_restaurant
+    - intent: get_calories
+    - action: action_retrieve_calories
+    - intent: get_calories
+    - action: action_retrieve_calories
+    - intent: get_calories
+    - action: action_retrieve_calories    
+#  - story: interactive_story_1
+#    steps:
+#    - intent: greet
+#    - action: utter_greet
+#    - intent: get_restaurant
+#    - action: action_retrieve_restaurant
+#    - intent: get_price
+#    - slot_was_set:
+#      - _slot: restaurant_attribute
+#    - action: action_retrieve_price
+#    - intent: get_price
+#    - slot_was_set:
+#      - _slot: restaurant_attribute
+#    - action: action_retrieve_price
+#    - intent: get_price
+#    - slot_was_set:
+#      - _slot: restaurant_attribute
+#    - action: action_retrieve_price
+  - story: get restaurant and price, simple
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: get_restaurant
+    - action: action_retrieve_restaurant
+    - intent: get_price
+    - action: action_retrieve_price
